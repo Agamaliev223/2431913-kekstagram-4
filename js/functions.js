@@ -14,4 +14,4 @@ function isPalindrome(str) {
   // Сравниваем нормализованную строку с перевернутой версией
   return normalizedStr === reversedStr;
 }
-
+//
