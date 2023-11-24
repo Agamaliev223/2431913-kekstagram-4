@@ -48,6 +48,7 @@ export function generatePhoto(id) {
   const likes = getRandomNumber(MIN_LIKES, MAX_LIKES);
   const comments = generateComments(getRandomNumber(MIN_COMMENTS_COUNT, MAX_COMMENTS_COUNT));
 
+
   return {
     id,
     url,
