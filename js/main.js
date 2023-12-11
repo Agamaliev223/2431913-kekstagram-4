@@ -7,4 +7,4 @@ function getGeneratedPhotos() {
   return generatePhotoArray(NUM_PHOTOS);
 }
 
-const photos = getGeneratedPhotos();
+getGeneratedPhotos();

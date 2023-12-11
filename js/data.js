@@ -2,12 +2,12 @@ import { getRandomNumber, getRandomAvatarNumber, getRandomAuthorName, getRandomP
 
 const MIN_LIKES = 15;
 const MAX_LIKES = 200;
-
+const MAX_COMMENTS_COUNT = 30;
 const MIN_COMMENTS_COUNT = 0;
 
 const MAX_COMMENT_ID = 1000; // Максимальное значение ID для комментариев
 
-const authorNames = ['Иван', 'Анна', 'Петр', 'Мария', 'Алексей', 'Елена', 'Дмитрий', 'Ольга', 'Сергей', 'Наталья'];
+export const authorNames = ['Иван', 'Анна', 'Петр', 'Мария', 'Алексей', 'Елена', 'Дмитрий', 'Ольга', 'Сергей', 'Наталья'];
 
 const comments = [
   'Всё отлично!',
@@ -18,7 +18,7 @@ const comments = [
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!',
 ];
 
-const photoDescriptions = [
+export const photoDescriptions = [
   'Красивый закат на пляже',
   'Горизонтальное излучение солнца в лесу',
   'Городской пейзаж вечером',
@@ -45,11 +45,11 @@ export function generatePhoto(id) {
   const description = getRandomPhotoDescription();
   const likes = getRandomNumber(MIN_LIKES, MAX_LIKES);
   const commentsCount = getRandomNumber(MIN_COMMENTS_COUNT, MAX_COMMENTS_COUNT);
-  const comments = [];
+  const commentsMassive = [];
 
   for (let i = 0; i < commentsCount; i++) {
     const comment = generateRandomComment();
-    comments.push(comment);
+    commentsMassive.push(comment);
   }
 
   return {
@@ -57,7 +57,7 @@ export function generatePhoto(id) {
     url,
     description,
     likes,
-    comments,
+    comments: commentsMassive,
   };
 }
 
